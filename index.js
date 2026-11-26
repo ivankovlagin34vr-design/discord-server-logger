@@ -18,8 +18,7 @@ if (!token) {
 }
 
 if (!logChannelId) {
-  console.error("Не задан LOG_CHANNEL_ID. Укажи ID канала для логов в .env.");
-  process.exit(1);
+  console.warn("LOG_CHANNEL_ID пока не задан. Бот подключится к Discord, но не будет отправлять логи до добавления ID канала.");
 }
 
 // GuildVoiceStates намеренно отсутствует. События голосовых каналов не собираются.

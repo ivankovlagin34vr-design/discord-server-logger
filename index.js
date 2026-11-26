@@ -74,6 +74,10 @@ function guildForMessage(message) {
 }
 
 async function sendLog(guild, title, description, fields = [], color = COLORS.info) {
+  if (!logChannelId) {
+    console.warn("LOG_CHANNEL_ID пока не задан. Событие пропущено:", title);
+    return;
+  }
   try {
     const channel =
       client.channels.cache.get(logChannelId) ||
